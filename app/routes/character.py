@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, status
-from schemas import Character, ReadAllCharacters
-from dummyData import data
+from app.schemas.schemas import Character, ReadAllCharacters
+from .dummyData import data
 
 router = APIRouter()
 
