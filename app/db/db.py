@@ -6,7 +6,7 @@ from .util import create_bd_file
 import os
 
 folder = os.environ.get("VOLUME_NAME", "db_data")
-os.chdir("..")
+# os.chdir("..")
 path = os.getcwd()
 
 create_bd_file(folder, "./")

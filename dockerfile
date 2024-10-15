@@ -2,7 +2,7 @@ FROM python:3.9
 
 RUN python -m pip install --upgrade pip
 
-WORKDIR /app
+WORKDIR ./
 
 COPY ./requirements.txt $WORKDIR
 
@@ -12,12 +12,12 @@ RUN apt-get update \
 
 RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 
-COPY ./app $WORKDIR
+COPY ./app $WORKDIR/app
 
 ENV VOLUME_NAME='db_data'
 
 COPY . ../
 
-CMD ["fastapi", "run", "main.py",  "--port", "8000"]
+CMD ["fastapi", "run", "app/main.py",  "--port", "8000"]
 
 EXPOSE 8000
