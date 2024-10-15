@@ -3,13 +3,17 @@ from fastapi import Depends
 from typing import Annotated
 from app.models.character import CharacterModel
 from app.schemas.character import Character
-from app.db.db import get_db, engine
+from app.db.db import engine
 from sqlalchemy.orm import Session
 
 
 class CharacterRepository:
+    """
+    Class repository with CRUD operations
+    """
+
     def __init__(self):
-        self.db = Session(engine)  ##Annotated[Session, Depends(get_db)]
+        self.db = Session(engine)
 
     def getCharacter(self, Id: int):
         result = self.db.query(CharacterModel).filter_by(id=Id).first()

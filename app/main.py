@@ -8,4 +8,4 @@ app.include_router(character.router)
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Welcome, please go to the Swagger UI"}

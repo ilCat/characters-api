@@ -11,21 +11,9 @@ path = os.getcwd()
 
 create_bd_file(folder, "./")
 
-# Crear una instancia de motor SQLite
+# Create engine instace
 engine = create_engine(f"sqlite:///{folder}/sqlitedb.db")
 
-# Crear una instancia DeclarativeMetals
+# Create  tables from Base
 base = Base()
 base.metadata.create_all(engine)
-
-# Crear la clase session desde el factory sessionmaker
-session = Session(engine)
-# Session()
-
-
-def get_db():
-    db = session()
-    try:
-        yield db
-    finally:
-        db.close

@@ -19,7 +19,3 @@ class ReadAllCharacters(BaseModel):
     mass: float
     eye_color: str
     birth_year: int
-
-
-# class Id(BaseModel):
-#     id: int

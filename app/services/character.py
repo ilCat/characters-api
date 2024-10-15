@@ -4,22 +4,27 @@ from app.schemas.character import Character, ReadAllCharacters
 
 
 class CharacterService(CharacterRepository):
+    """
+    Class Sevices based  on repository
+    It is necessary to handle the business logic and operate over the data that comes from the DB
+    """
+
     def __init__(self):
-        self.repo = CharacterRepository()
+        self.__repo = CharacterRepository()
 
     def getAll(self):
         return map(
-            CharacterMapper.ReadAllCharactersMapper, self.repo.getAllCharacters()
+            CharacterMapper.ReadAllCharactersMapper, self.__repo.getAllCharacters()
         )
 
     def getById(self, id):
-        return self.repo.getCharacter(id)
+        return self.__repo.getCharacter(id)
 
     def save(self, item):
-        return self.repo.createCharacter(character=item)
+        return self.__repo.createCharacter(character=item)
 
     def delete(self, item):
-        return self.repo.deleteCharacter(character=item)
+        return self.__repo.deleteCharacter(character=item)
 
 
 class CharacterMapper:
