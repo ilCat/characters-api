@@ -1,7 +1,5 @@
-# from sqlalchemy.orm import Mapped, Column
-from sqlalchemy import create_engine, Column, Integer, String, Float
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, DeclarativeBase
+from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy.orm import DeclarativeBase
 
 
 class Base(DeclarativeBase):
@@ -10,7 +8,6 @@ class Base(DeclarativeBase):
 
 class CharacterModel(Base):
     __tablename__ = "characters"
-    # __table_args__ = {"schema": "pidemo"}
 
     id = Column(Integer, name="id", primary_key=True)
     name = Column(String, name="name")

@@ -1,4 +1,3 @@
-# TODO: no se si lo voy a ausar per aca podria usarse la logica
 from app.crud.character import CharacterRepository
 from app.schemas.character import Character, ReadAllCharacters
 
