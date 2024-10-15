@@ -9,22 +9,19 @@ service = CharacterService()
 
 
 @router.get(
-    "/character/getAll", tags=["character"]  ##, response_model=list[ReadAllCharacters]
+    "/character/getAll", tags=["character"], response_model=list[ReadAllCharacters]
 )
-def read_all_characters():  ##-> list[ReadAllCharacters]:
+def read_all_characters() -> list[ReadAllCharacters]:
     return service.getAll()
 
 
-@router.get("/character/get/{id}", tags=["character"])  ##, response_model=Character)
-def read_character_by_id(id: int):
+@router.get("/character/get/{id}", tags=["character"], response_model=Character)
+def read_character_by_id(id: int) -> Character:
     return service.getById(id)
 
 
-@router.post(
-    "/character/add",
-    tags=["character"],
-)  # response_model=Character)
-def save_character(req: Character):
+@router.post("/character/add", tags=["character"], response_model=Character)
+def save_character(req: Character) -> Character:
     exist = read_character_by_id(req.id)
     print(exist)
     if exist:
@@ -43,6 +40,6 @@ def delete_character(id: int):
     if not character:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Id do not exists, delete cancelled",
+            detail="Id do not exists, delete operation cancelled",
         )
     return service.delete(character)

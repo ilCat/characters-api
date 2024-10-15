@@ -1,6 +1,6 @@
 # TODO: no se si lo voy a ausar per aca podria usarse la logica
 from app.crud.character import CharacterRepository
-from app.schemas.character import Character
+from app.schemas.character import Character, ReadAllCharacters
 
 
 class CharacterService(CharacterRepository):
@@ -8,7 +8,9 @@ class CharacterService(CharacterRepository):
         self.repo = CharacterRepository()
 
     def getAll(self):
-        return self.repo.getAllCharacters()
+        return map(
+            CharacterMapper.ReadAllCharactersMapper, self.repo.getAllCharacters()
+        )
 
     def getById(self, id):
         return self.repo.getCharacter(id)
@@ -18,3 +20,15 @@ class CharacterService(CharacterRepository):
 
     def delete(self, item):
         return self.repo.deleteCharacter(character=item)
+
+
+class CharacterMapper:
+    def ReadAllCharactersMapper(character: Character):
+        return ReadAllCharacters(
+            id=character.id,
+            name=character.name,
+            height=character.height,
+            mass=character.mass,
+            eye_color=character.eye_color,
+            birth_year=character.birth_year,
+        )
