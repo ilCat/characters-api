@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Tokita Ohma",
+        "height": 1.82,
+        "mass": 85.0,
+        "hair_color": "black",
+        "skin_color": "white",
+        "eye_color": "black",
+        "birth_year": 1992
+    },
+    {
+        "id": 2,
+        "name": "Kuroki Gensai",
+        "height": 1.75,
+        "mass": 90.0,
+        "hair_color": "black",
+        "skin_color": "white",
+        "eye_color": "black",
+        "birth_year": 1960
+    },
+    {
+        "id": 3,
+        "name": "Wakatsuki Takeshi",
+        "height": 1.93,
+        "mass": 193.0,
+        "hair_color": "brown",
+        "skin_color": "white",
+        "eye_color": "brown",
+        "birth_year": 1980
+    },
+    {
+        "id": 4,
+        "name": "Kanoh Agito",
+        "height": 1.88,
+        "mass": 97.0,
+        "hair_color": "black",
+        "skin_color": "white",
+        "eye_color": "black",
+        "birth_year": 1985
+    },
+    {
+        "id": 5,
+        "name": "Hatsumi Sen",
+        "height": 1.85,
+        "mass": 80.0,
+        "hair_color": "black",
+        "skin_color": "white",
+        "eye_color": "black",
+        "birth_year": 1987
+    },
+    {
+        "id": 6,
+        "name": "Imai Cosmo",
+        "height": 1.67,
+        "mass": 68.0,
+        "hair_color": "brown",
+        "skin_color": "white",
+        "eye_color": "brown",
+        "birth_year": 1995
+    },
+    {
+        "id": 7,
+        "name": "Kiryu Setsuna",
+        "height": 1.78,
+        "mass": 75.0,
+        "hair_color": "white",
+        "skin_color": "white",
+        "eye_color": "blue",
+        "birth_year": 1990
+    },
+    {
+        "id": 8,
+        "name": "Muteba Gizenga",
+        "height": 1.90,
+        "mass": 100.0,
+        "hair_color": "black",
+        "skin_color": "black",
+        "eye_color": "brown",
+        "birth_year": 1975
+    },
+    {
+        "id": 9,
+        "name": "Gaolang Wongsawat",
+        "height": 1.80,
+        "mass": 72.0,
+        "hair_color": "black",
+        "skin_color": "brown",
+        "eye_color": "black",
+        "birth_year": 1988
+    },
+    {
+        "id": 10,
+        "name": "Raian Kure",
+        "height": 1.85,
+        "mass": 85.0,
+        "hair_color": "black",
+        "skin_color": "white",
+        "eye_color": "black",
+        "birth_year": 1991
+    }
+]

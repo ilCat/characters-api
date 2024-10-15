@@ -11,23 +11,6 @@ This API allows interaction with character data, enabling operations such as que
 - Insert a new character.
 - Delete a character by ID.
 
-## Data Structure
-
-Each character has the following structure:
-
-```json
-{
-  "id": 1,
-  "name": "Luke Skywalker",
-  "height": 172,
-  "mass": 77,
-  "hair_color": "blond",
-  "skin_color": "fair",
-  "eye_color": "blue",
-  "birth_year": 1998
-}
-```
-
 ## Installation
 Clone the repository:
 ```bash
@@ -46,31 +29,58 @@ pip install -r requirements.txt
 ```
 Start the application:
 
+```bash
+fastapi dev app/main.py 
 ```
-uvicorn main:app --reload
-```
+
+The API will be accessible at http://localhost:8000.
+The API documentation will be accessible at http://localhost:8000/docs.
+
 ## Running with Docker
 To run the API in a Docker container, follow these steps:
 
 Build the Docker image:
 ```bash
-docker build -t characters-api .
+docker-compose build
 ```
 Run the Docker container:
 ```bash
-docker run -d -p 8000:8000 characters-api
+docker-compose up
+```
+Stop the Docker container:
+```bash
+docker-compose down
 ```
 The API will be accessible at http://localhost:8000.
+The API documentation will be accessible at http://localhost:8000/docs.
 
 ## Usage
 You can test the API using tools like Postman or cURL. Below is an example of how to make a GET request to retrieve all characters:
 
 curl -X GET "http://127.0.0.1:8000/character/getAll"
 
+## Data Structure
+
+Each character has the following structure:
+
+```json
+{
+    "id": 1,
+    "name": "Tokita Ohma",
+    "height": 1.82,
+    "mass": 85.0,
+    "hair_color": "black",
+    "skin_color": "white",
+    "eye_color": "black",
+    "birth_year": 1992
+}
+```
+
+
 ## Endpoints
 #### Get All Characters
 
-URL: /character/getAll
+URL:  http://localhost:8000/character/getAll
 
 Method: GET
 
@@ -78,7 +88,7 @@ Description: Returns a list of all characters.
 
 #### Get Character by ID
 
-URL: /character/get/{id}
+URL:  http://localhost:8000/character/get/{id}
 
 Method: GET
 
@@ -86,7 +96,7 @@ Description: Returns the data of the character with the specified ID.
 
 #### Add a New Character
 
-URL: /character/add
+URL:  http://localhost:8000/character/add
 
 Method: POST
 
@@ -94,8 +104,8 @@ Description: Inserts a new character. All fields are required and must comply wi
 
 #### Delete Character by ID
 
-URL: /character/delete/{id}
+URL:  http://localhost:8000/character/delete/{id}
 
 Method: DELETE
 
-Description: Deletes the character with the specified ID.
+Description: Deletes the character with the specified Id.

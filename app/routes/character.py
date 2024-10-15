@@ -1,6 +1,5 @@
 from fastapi import APIRouter, HTTPException, status
 from app.schemas.character import Character, ReadAllCharacters
-from .dummyData import data
 from app.services.character import CharacterService
 
 router = APIRouter()
