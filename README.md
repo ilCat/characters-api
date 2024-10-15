@@ -11,6 +11,10 @@ This API allows interaction with character data, enabling operations such as que
 - Insert a new character.
 - Delete a character by ID.
 
+## Requirements
+Python 3.9^
+Docker 
+
 ## Installation
 Clone the repository:
 ```bash
