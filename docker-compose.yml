@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    container_name: character
+    ports:
+      - '8000:8000'
+    volumes:
+      - db_data:/db_data
+    command: [ "fastapi", "run", "main.py", "--port", "8000" ]
+    expose:
+      - 8000
+
+volumes:
+  db_data:
+    driver: local
+    name: db_data
+    driver_opts:
+      type: none
+      device: ./db_data
+      o: bind

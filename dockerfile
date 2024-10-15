@@ -14,6 +14,10 @@ RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 
 COPY ./app $WORKDIR
 
+ENV VOLUME_NAME='db_data'
+
+COPY . ../
+
 CMD ["fastapi", "run", "main.py",  "--port", "8000"]
 
 EXPOSE 8000

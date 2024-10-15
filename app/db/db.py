@@ -1,15 +1,20 @@
 from sqlalchemy import create_engine
 
 from app.models.character import Base
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import Session
 from .util import create_bd_file
+import os
 
-create_bd_file(".dataLite", "./")
+folder = os.environ.get("VOLUME_NAME", "db_data")
+os.chdir("..")
+path = os.getcwd()
+
+create_bd_file(folder, "./")
 
 # Crear una instancia de motor SQLite
-engine = create_engine("sqlite:///.dataLite/challengedb.db")
+engine = create_engine(f"sqlite:///{folder}/sqlitedb.db")
 
-# Crear una instancia DeclarativeMeta
+# Crear una instancia DeclarativeMetals
 base = Base()
 base.metadata.create_all(engine)
 
