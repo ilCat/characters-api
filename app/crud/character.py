@@ -37,4 +37,4 @@ class CharacterRepository:
     def deleteCharacter(self, character: Character):
         self.db.delete(character)
         self.db.commit()
-        return f"Id {character.id} was deleted"
+        return f"Character {character.name} with Id {character.id} was deleted"

@@ -40,6 +40,6 @@ def delete_character(id: int):
     if not character:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Id do not exists, delete operation cancelled",
+            detail=f"Id {id} do not exists, delete operation cancelled",
         )
     return service.delete(character)

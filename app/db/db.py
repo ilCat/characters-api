@@ -4,10 +4,10 @@ from app.models.character import Base
 from sqlalchemy.orm import sessionmaker, Session
 from .util import create_bd_file
 
-create_bd_file("data", "./")
+create_bd_file(".dataLite", "./")
 
 # Crear una instancia de motor SQLite
-engine = create_engine("sqlite:///data/challengedb.db")
+engine = create_engine("sqlite:///.dataLite/challengedb.db")
 
 # Crear una instancia DeclarativeMeta
 base = Base()
