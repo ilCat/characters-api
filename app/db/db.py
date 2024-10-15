@@ -1,13 +1,26 @@
 from sqlalchemy import create_engine
 
-# from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from app.models.character import Base
+from sqlalchemy.orm import sessionmaker, Session
+from .util import create_bd_file
+
+create_bd_file("data", "./")
 
 # Crear una instancia de motor SQLite
-motor = create_engine("sqlite:///fastapidb.db")
+engine = create_engine("sqlite:///data/challengedb.db")
 
 # Crear una instancia DeclarativeMeta
-# Base = declarative_base()
+base = Base()
+base.metadata.create_all(engine)
 
-# Crear la clase SessionLocal desde el factory sessionmaker
-SesionLocal = sessionmaker(bind=motor, expire_on_commit=False)
+# Crear la clase session desde el factory sessionmaker
+session = Session(engine)
+# Session()
+
+
+def get_db():
+    db = session()
+    try:
+        yield db
+    finally:
+        db.close

@@ -1,7 +1,7 @@
 data = [
     {
         "id": 1,
-        "name": "Kakaroto",
+        "name": "Omma",
         "height": 1.80,
         "mass": 80.0,
         "eye_color": "black",
@@ -9,7 +9,7 @@ data = [
     },
     {
         "id": 2,
-        "name": "Vegeta",
+        "name": "Kuroqui",
         "height": 1.80,
         "mass": 80.0,
         "eye_color": "black",

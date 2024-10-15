@@ -1,17 +1,22 @@
-from sqlalchemy.orm import Mapped, mapped_column
+# from sqlalchemy.orm import Mapped, Column
+from sqlalchemy import create_engine, Column, Integer, String, Float
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
-# from app.models.base import SQLModel
+
+class Base(DeclarativeBase):
+    pass
 
 
-class CharacterModel:  # (SQLModel):
+class CharacterModel(Base):
     __tablename__ = "characters"
-    __table_args__ = {"schema": "pidemo"}
+    # __table_args__ = {"schema": "pidemo"}
 
-    id: Mapped[int] = mapped_column("id", primary_key=True, unique=True)
-    name: Mapped[str] = mapped_column("name")
-    height: Mapped[int] = mapped_column("height")
-    mass: Mapped[int] = mapped_column("mass")
-    hair_color: Mapped[str] = mapped_column("hair_color")
-    skin_color: Mapped[str] = mapped_column("skin_color")
-    eye_color: Mapped[str] = mapped_column("eye_color")
-    birth_year: Mapped[int] = mapped_column("birth_year")
+    id = Column(Integer, name="id", primary_key=True)
+    name = Column(String, name="name")
+    height = Column(Float, name="height")
+    mass = Column(Float, name="mass")
+    hair_color = Column(String, name="hair_color")
+    skin_color = Column(String, name="skin_color")
+    eye_color = Column(String, name="eye_color")
+    birth_year = Column(Integer, name="birth_year")
