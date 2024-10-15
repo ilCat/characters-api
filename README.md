@@ -18,9 +18,9 @@ Docker
 ## Installation
 Clone the repository:
 ```bash
-git clone https://github.com/ilCat/pi-challenge.git
+git clone https://github.com/ilCat/characters-api.git
 
-cd pi-challenge
+cd characters-api
 ```
 Create and activate a virtual environment:
 ```bash
